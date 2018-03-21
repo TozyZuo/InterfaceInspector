@@ -12,8 +12,8 @@
 		BA63B528202456FF00187494 /* InterfaceInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = BA63B527202456FF00187494 /* InterfaceInspector.m */; };
 		BA63B52A202456FF00187494 /* InterfaceInspectorHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = BA63B529202456FF00187494 /* InterfaceInspectorHeader.h */; };
 		BA63B52C202456FF00187494 /* PrefixHeader.pch in Headers */ = {isa = PBXBuildFile; fileRef = BA63B52B202456FF00187494 /* PrefixHeader.pch */; };
-		BA63B52E202456FF00187494 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BA63B52D202456FF00187494 /* Podfile */; };
-		BA63B53A2024650900187494 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = BA63B5392024575A00187494 /* JRSwizzle.m */; };
+		BAF35DB02061339F008AC63F /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = BAF35DAE2061339F008AC63F /* JRSwizzle.h */; };
+		BAF35DB12061339F008AC63F /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF35DAF2061339F008AC63F /* JRSwizzle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +34,8 @@
 		BA63B527202456FF00187494 /* InterfaceInspector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceInspector.m; sourceTree = "<group>"; };
 		BA63B529202456FF00187494 /* InterfaceInspectorHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceInspectorHeader.h; sourceTree = "<group>"; };
 		BA63B52B202456FF00187494 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		BA63B52D202456FF00187494 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
-		BA63B5382024575A00187494 /* JRSwizzle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
-		BA63B5392024575A00187494 /* JRSwizzle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
+		BAF35DAE2061339F008AC63F /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
+		BAF35DAF2061339F008AC63F /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +69,7 @@
 		BA63B51F202456FF00187494 /* InterfaceInspector */ = {
 			isa = PBXGroup;
 			children = (
-				BA63B5372024575A00187494 /* Source */,
+				BAF35DAD2061339F008AC63F /* Source */,
 				BA63B525202456FF00187494 /* InterfaceInspector.h */,
 				BA63B527202456FF00187494 /* InterfaceInspector.m */,
 				BA63B529202456FF00187494 /* InterfaceInspectorHeader.h */,
@@ -84,19 +83,17 @@
 			children = (
 				BA63B521202456FF00187494 /* Info.plist */,
 				BA63B52B202456FF00187494 /* PrefixHeader.pch */,
-				BA63B52D202456FF00187494 /* Podfile */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BA63B5372024575A00187494 /* Source */ = {
+		BAF35DAD2061339F008AC63F /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				BA63B5382024575A00187494 /* JRSwizzle.h */,
-				BA63B5392024575A00187494 /* JRSwizzle.m */,
+				BAF35DAE2061339F008AC63F /* JRSwizzle.h */,
+				BAF35DAF2061339F008AC63F /* JRSwizzle.m */,
 			);
-			name = Source;
-			path = ../../Source;
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA63B526202456FF00187494 /* InterfaceInspector.h in Headers */,
+				BAF35DB02061339F008AC63F /* JRSwizzle.h in Headers */,
 				BA63B52A202456FF00187494 /* InterfaceInspectorHeader.h in Headers */,
 				BA63B52C202456FF00187494 /* PrefixHeader.pch in Headers */,
 			);
@@ -191,7 +189,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA63B52E202456FF00187494 /* Podfile in Resources */,
 				BA63B522202456FF00187494 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,7 +207,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "APP_NAME=\"Interface Inspector\"\nFRAMEWORK_NAME=\"InterfaceInspector\"\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${APP_NAME}.app\"\ncp -r \"${PROJECT_DIR}/${APP_NAME}.app\" \"${BUILT_PRODUCTS_DIR}/\"\n\nAPP_BUNDLE_PATH=\"${BUILT_PRODUCTS_DIR}/${APP_NAME}.app/Contents/MacOS\"\nAPP_EXECUTABLE_PATH=\"${APP_BUNDLE_PATH}/${APP_NAME}\"\n\ncp -r \"${BUILT_PRODUCTS_DIR}/${FRAMEWORK_NAME}.framework\" ${APP_BUNDLE_PATH}\n\ninsert_dylib --all-yes \"@loader_path/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"$APP_EXECUTABLE_PATH\" \"$APP_EXECUTABLE_PATH\"";
+			shellScript = "APP_NAME=\"Interface Inspector\"\nFRAMEWORK_NAME=\"InterfaceInspector\"\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${APP_NAME}.app\"\ncp -R \"${PROJECT_DIR}/${APP_NAME}.app\" \"${BUILT_PRODUCTS_DIR}/\"\n\nAPP_BUNDLE_PATH=\"${BUILT_PRODUCTS_DIR}/${APP_NAME}.app/Contents/MacOS\"\nMACH_INJECT_BUNDLE_STUB_PATH=\"${BUILT_PRODUCTS_DIR}/${APP_NAME}.app/Contents/Resources/mach_inject_bundle.framework/Versions/A/Resources\"\nAPP_EXECUTABLE_PATH=\"${APP_BUNDLE_PATH}/${APP_NAME}\"\n\ncp -R \"${BUILT_PRODUCTS_DIR}/${FRAMEWORK_NAME}.framework\" \"${APP_BUNDLE_PATH}\"\ncp -R \"${PROJECT_DIR}/mach_inject_bundle_stub.bundle\" \"${MACH_INJECT_BUNDLE_STUB_PATH}\"\n\ninsert_dylib --all-yes \"@loader_path/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"$APP_EXECUTABLE_PATH\" \"$APP_EXECUTABLE_PATH\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -219,7 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA63B53A2024650900187494 /* JRSwizzle.m in Sources */,
+				BAF35DB12061339F008AC63F /* JRSwizzle.m in Sources */,
 				BA63B528202456FF00187494 /* InterfaceInspector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
